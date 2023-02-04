@@ -3,7 +3,7 @@ import './login.css'
 
 export default function Login() {
     return (
-        <div className="background">
+        <div className="background container">
             <div id="picCarosel" className="">
                 <div className="carousel-item active">
                     <img></img>
