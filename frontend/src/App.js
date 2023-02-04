@@ -1,15 +1,20 @@
 import './App.css';
 import React from 'react';
 import EmailSignUp from './components/emailSignup/emailSignup';
-import Signup from './components/signup/signup';
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from './components/layout/layout';
+import Login from './components/login/login';
 function App() {
   return (
-    <div className="App">
-      <section className='full-h'>
-        <Signup />
-      </section>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="/landing" element={<Landing />} />
+          <Route path="/signup" element={<EmailSignUp />} />
+          <Route path="/login" element={<Login />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
