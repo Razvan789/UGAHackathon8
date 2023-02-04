@@ -13,7 +13,7 @@ export default function Login() {
                     <p>this is a paragraph</p>
                 </div>
                 <button>Creat an account</button>
-                <p> already have an account? <a> sign in</a></p>
+                <p> Already have an account? <a> sign in</a></p>
             </div>
         </div >
     )
