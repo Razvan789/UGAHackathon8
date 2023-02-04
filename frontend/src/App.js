@@ -1,6 +1,5 @@
 import './App.css';
 import React from 'react';
-import Landing from './components/landing/landing';
 import EmailSignUp from './components/emailSignup/emailSignup';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from './components/layout/layout';

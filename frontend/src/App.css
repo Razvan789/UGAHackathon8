@@ -80,6 +80,10 @@
     opacity: 0.8;
   }
 
+.rounded {
+    border-radius: 1.5rem;
+}
+
 .x-padding {
   padding-left: 50px;
   padding-right: 50px;

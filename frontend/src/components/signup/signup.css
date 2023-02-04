@@ -16,7 +16,13 @@ background {
     padding: 10px 20px;
     border-radius: .5rem;
     font-weight: 750;
+    cursor: pointer;
 }
+
+.light-btn:hover {
+    background-color: white;
+}
+
 h1 {
     color: #582F0E;
 }

@@ -2,16 +2,11 @@
     background-color: #F2E8CF;
 }
 
-.rounded {
-    border-radius: 1.5rem;
-}
-
 .pic-carousel {
     display: flex;
     justify-content: center;
     gap: 1rem;
 }
-
 
 .carousel-item {
     transform: scale(0.8);
