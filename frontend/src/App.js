@@ -1,12 +1,13 @@
 import './App.css';
 import React from 'react';
-import Landing from './components/landing/landing';
 import EmailSignUp from './components/emailSignup/emailSignup';
+import Signup from './components/signup/signup';
+
 function App() {
   return (
     <div className="App">
       <section className='full-h'>
-        <EmailSignUp />
+        <Signup />
       </section>
     </div>
   );
