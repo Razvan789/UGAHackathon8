@@ -8,6 +8,10 @@
   font-family: 'Raleway', sans-serif;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 
 .App-logo {
   height: 40vmin;
@@ -48,6 +52,10 @@
   height: 100vh;
 }
 
+.h-100 {
+  height: 100%;
+}
+
 .btn {
   border-radius: .5rem;
   font-weight: 750;
@@ -59,15 +67,27 @@
 }
 
 .primary {
-  background-color: #04AA6D;
+  background-color: #386641;
+}
+
+.primary-text {
+  color: #386641;
 }
 
 .secondary {
   background-color: #6A994E;
 }
 
+.secondary-text {
+  color: #6A994E;
+}
+
 .tertiary {
   background-color: #A7C957;
+}
+
+.tertiary-text {
+  color: #A7C957;
 }
 
 .background {
@@ -86,8 +106,12 @@
   background-color: #BC4749;
 }
 
+.secondary-negative-text {
+  color: #BC4749;
+}
+
   
   /* Add a hover effect for buttons */
-.btn-primary:hover {
+.btn:hover {
   opacity: 0.8;
 }
