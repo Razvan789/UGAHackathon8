@@ -5,7 +5,6 @@
 
 .App {
   text-align: center;
-  font-family: 'Raleway', sans-serif;
   --primary: #386641;
   --secondary: #6A994E;
   --tertiary: #A7C957;
@@ -17,6 +16,7 @@
 
 * {
   box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
 }
 
 
@@ -66,13 +66,18 @@
 }
 
 .btn {
-  border-radius: .5rem;
+  border-radius: .75rem;
   font-weight: 750;
   padding: 14px 20px;    
   margin: 8px 0;
   border: none;
   cursor: pointer;
 }
+
+  /* Add a hover effect for buttons */
+  .btn:hover {
+    opacity: 0.8;
+  }
 
 .x-padding {
   padding-left: 50px;
@@ -124,10 +129,7 @@
 }
 
   
-  /* Add a hover effect for buttons */
-.btn:hover {
-  opacity: 0.8;
-}
+
 
 .link {
   position: relative;
@@ -139,6 +141,7 @@
   content: "";
   position: absolute;
   left: 0;
+  bottom: -2px;
   width: 0px;
   height: 2px;
   background: var(--secondary-negative);
