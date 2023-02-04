@@ -36,7 +36,7 @@ def checkEmpty(data):
 def query_db(query, args=()):
     cursor.execute(query, args)
     result = cursor.fetchall()
-    return checkEmpty(result[0]) if result else None
+    return checkEmpty(result) if result else None
 
 # Create a function to insert into the database
 def insert_db(query, args=()):
