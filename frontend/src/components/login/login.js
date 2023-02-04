@@ -12,7 +12,7 @@ export default function Login() {
                     <h1>Algorithm</h1>
                     <p>this is a paragraph</p>
                 </div>
-                <button>Creat an account</button>
+                <button className='btn primary light-text'>Create an account</button>
                 <p> Already have an account? <a> sign in</a></p>
             </div>
         </div >

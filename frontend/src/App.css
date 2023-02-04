@@ -1,6 +1,13 @@
+@font-face {
+  font-family: 'Raleway';
+  src: url('../public/fonts/Raleway-VariableFont_wght.ttf');
+}
+
 .App {
   text-align: center;
+  font-family: 'Raleway', sans-serif;
 }
+
 
 .App-logo {
   height: 40vmin;
@@ -39,4 +46,48 @@
 
 .full-h {
   height: 100vh;
+}
+
+.btn {
+  border-radius: .5rem;
+  font-weight: 750;
+  color: white;
+  padding: 14px 20px;    
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+}
+
+.primary {
+  background-color: #04AA6D;
+}
+
+.secondary {
+  background-color: #6A994E;
+}
+
+.tertiary {
+  background-color: #A7C957;
+}
+
+.background {
+  background-color: #F2E8CF;
+}
+
+.light-text {
+  color: #F2E8CF;
+}
+
+.dark-text {
+  color: #582F0E;
+}
+
+.secondary-negative {
+  background-color: #BC4749;
+}
+
+  
+  /* Add a hover effect for buttons */
+.btn-primary:hover {
+  opacity: 0.8;
 }

@@ -9,7 +9,7 @@ export default function Landing() {
                 <img src="https://guides.nynhp.org/media/i6859.jpg" alt="deez" className="rounded"/>
             </div>
             <div id="title" className="">
-                <h1>Algorithm</h1>
+                <h1>Wlgorithm</h1>
                 <p>Users going through a vetting process to ensure you never match with bots</p>
             </div>
             <button className="btn-primary"> Create an account</button>
