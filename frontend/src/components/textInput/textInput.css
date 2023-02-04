@@ -1,0 +1,8 @@
+.input-container {
+    display: grid;
+}
+
+.input-container .input {
+    width: 300px;
+    
+}
