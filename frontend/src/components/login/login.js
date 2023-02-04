@@ -1,22 +1,33 @@
 import React from 'react'
 import './login.css'
 
-export default function Login() {
+export default function login() {
+    function handleSubmit(e) {
+        e.preventDefault();
+        console.log(e.target.name.value);
+        alert("Submitted!");
+    }
     return (
-        <div className="background container">
-            <div id="picCarosel" className="">
-                <div className="carousel-item active">
-                    <img></img>
-                </div>
-                <div id="title" className="">
-                    <h1>You're invited to wandr.</h1>
-                    <p>Sign up now</p>
-                </div>
-                <button id="create-account" className='btn primary light-text'>
-                    Create an account
-                    </button>
-                <p> Already have an account? <a> sign in</a></p>
-            </div>
-        </div >
+        <div className='container background'>
+            <form onSubmit={handleSubmit} className='form'>
+                <h1 className='secondary-negative-text'>Login</h1>
+                
+                <TextInput type='email' name='email' placeholder='Email' />
+                <TextInput type='password' name='password' placeholder='Password' />
+                <button className='btn primary light-text x-padding' type='submit'>Log in</button>
+                <p> Don't have an account? </p>
+                <Link to = {'/signup'} className = "router-link">
+                    <button className="btn primary light-text x-padding">Sign up</button>
+                </Link>
+            </form>
+        </div>
+    )
+}
+function TextInput({ type, name, placeholder }) {
+    return (
+        <div className='input-container'>
+            <label htmlFor={name} className='label'>{placeholder}</label>
+            <input id={name} className='input' type={type} name={name} placeholder={placeholder} />
+        </div>
     )
 }
