@@ -1,8 +1,29 @@
 .input-container {
-    display: grid;
+    position: relative;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    margin: 15px;
 }
 
-.input-container .input {
+.input-container > label {
+    position: absolute;
+    transition: all 0.3s ease;
+    background-color: var(--background);
+    top: 50;
+    padding: 3px;
+    left: .5rem;
+}
+
+.input-container > input {
+    border: var(--primary) 2px solid;
+    border-radius: .5rem;
+    padding: 1rem;
+    background-color: transparent;
+    transition: all 0.3s ease;
     width: 300px;
-    
+}
+
+.input:not(:placeholder-shown) + label, .input:focus + label {
+    transform: translateY(-1.5rem);
 }

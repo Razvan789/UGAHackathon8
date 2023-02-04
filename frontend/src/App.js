@@ -4,6 +4,8 @@ import EmailSignUp from './components/emailSignup/emailSignup';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from './components/layout/layout';
 import Login from './components/login/login';
+import Landing from './components/landing/landing';
+
 function App() {
   return (
     <BrowserRouter>
