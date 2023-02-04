@@ -6,6 +6,7 @@ import Layout from './components/layout/layout';
 import Login from './components/login/login';
 import Landing from './components/landing/landing';
 import SignUp from './components/signup/signup';
+import InterestPage from './components/interestPage/interestPage';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
           <Route path="/emailSignup" element={<EmailSignUp />} />
+          <Route path="/interestPage" element ={<InterestPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
