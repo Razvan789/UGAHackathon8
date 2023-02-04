@@ -9,10 +9,12 @@ export default function Login() {
                     <img></img>
                 </div>
                 <div id="title" className="">
-                    <h1>Algorithm</h1>
-                    <p>this is a paragraph</p>
+                    <h1>You're invited to wandr.</h1>
+                    <p>Sign up now</p>
                 </div>
-                <button className='btn primary light-text'>Create an account</button>
+                <button id="create-account" className='btn primary light-text'>
+                    Create an account
+                    </button>
                 <p> Already have an account? <a> sign in</a></p>
             </div>
         </div >
