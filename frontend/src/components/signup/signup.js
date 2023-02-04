@@ -13,7 +13,7 @@ export default function Signup() {
                     </button>
                     <br></br>
                     <br></br>
-                    <button id="nrbtn">
+                    <button className="light-btn background dark-text x-padding">
                 <p>Continue with phone number</p>
                 </button>
             </div>
