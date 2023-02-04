@@ -9,7 +9,7 @@ export default function Signup() {
             <div className="top">
                 <img src={logotransparent} alt="logo" height="300" className="rounded"/>
                 <div id="title" className="">
-                    <h1>Sign up to continue</h1>
+                    <h1>Sign up to start wandering</h1>
                     <Link to={"/emailSignup"} className="router-link">
                         <button className="btn primary light-text x-padding">
                             <p>Continue with email</p>
