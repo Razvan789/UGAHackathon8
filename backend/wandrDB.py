@@ -24,7 +24,7 @@ mysql.init_app(app)
 conn = mysql.connect()
 cursor = conn.cursor(pymysql.cursors.DictCursor)
 
-
+### Helper Functions
 def checkEmpty(data):
     if not data:
         return ("404", 404)
@@ -36,12 +36,14 @@ def checkEmpty(data):
 def query_db(query, args=()):
     cursor.execute(query, args)
     result = cursor.fetchall()
-    return checkEmpty(result) if result else None
+    return checkEmpty(result)
 
 # Create a function to insert into the database
 def insert_db(query, args=()):
     cursor.execute(query, args)
     conn.commit()
+
+
 
 
 ## API Endpoints ##
@@ -55,7 +57,7 @@ def users():
         return query_db('SELECT * FROM users')
 
     elif request.method == 'POST':
-        args = request.args
+        args = request.json
         if args:
             insert_db(f'INSERT INTO users (userID, firstName, lastName, email, password) VALUES ({args.get("userID")}, "{args.get("firstName")}", "{args.get("lastName")}", "{args.get("email")}", "{args.get("password")}")')
             return query_db(f'SELECT * FROM users WHERE userID = {args.get("userID")}')
