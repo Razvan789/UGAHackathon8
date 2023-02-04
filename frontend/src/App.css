@@ -6,6 +6,13 @@
 .App {
   text-align: center;
   font-family: 'Raleway', sans-serif;
+  --primary: #386641;
+  --secondary: #6A994E;
+  --tertiary: #A7C957;
+  --background: #F2E8CF;
+  --light-text: #F2E8CF;
+  --dark-text: #582F0E;
+  --secondary-negative: #BC4749;
 }
 
 * {
@@ -52,18 +59,24 @@
   height: 100vh;
 }
 
-.h-100 {
+.container {
   height: 100%;
+  padding: 36px;
+  overflow-x: hidden;
 }
 
 .btn {
   border-radius: .5rem;
   font-weight: 750;
-  color: white;
   padding: 14px 20px;    
   margin: 8px 0;
   border: none;
   cursor: pointer;
+}
+
+.x-padding {
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .primary {
@@ -114,4 +127,25 @@
   /* Add a hover effect for buttons */
 .btn:hover {
   opacity: 0.8;
+}
+
+.link {
+  position: relative;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 0px;
+  height: 2px;
+  background: var(--secondary-negative);
+  transition: width .3s;
+}
+
+.link:hover::after {
+  width: 100%;
+  transition: width .3s;
 }
