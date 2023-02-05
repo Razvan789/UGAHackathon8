@@ -9,6 +9,7 @@ import SignUp from './components/signup/signup';
 import Ispeak from './components/ispeak/ispeak';
 import InterestPage from './components/interestPage/interestPage';
 import Profiledeets from './components/profiledeets/profiledeets';
+import Iama from './components/iama/iama';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/ispeak" element={<Ispeak />} />
           <Route path="/interestPage" element={<InterestPage />} />
           <Route path="/profiledeets" element={<Profiledeets />} />
+          <Route path="/iama" element={<Iama />} />
         </Route>
       </Routes>
     </BrowserRouter>
