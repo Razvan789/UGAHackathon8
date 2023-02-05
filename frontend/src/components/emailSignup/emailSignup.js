@@ -1,12 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
 import TextInput from '../textInput/textInput';
+import { insertUser, checkFields } from '../../utils/apiAdapter';
+import { Link, useNavigate } from 'react-router-dom';
+
 
 export default function EmailSignUp() {
+    const [success, setSucess] = useState(0); // 0 - waiting, 1 - success, 2 - error
+    const [errorMessage, setErrorMessage] = useState('Error Occured, please try again later');
+    const navigate = useNavigate();
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(e.target.name.value);
-        alert("Submitted!");
+        if (!checkFields(e, ['name', 'email', 'password', 'confirmPassword'])) {
+            setErrorMessage('Please fill all fields');
+            setSucess(2);
+            return;
+        }
+        if (e.target.password.value !== e.target.confirmPassword.value) {
+            setErrorMessage('Passwords do not match');
+            setSucess(2);
+            return;
+        }
+        insertUser({
+            name: e.target.name.value,
+            email: e.target.email.value,
+            password: e.target.password.value,
+        }).then((res) => {
+            setSucess(1);
+            window.sessionStorage.setItem('message', "Account Created!");
+            navigate('/login');
+        })
+        .catch((err) => {
+            setErrorMessage(err.message);
+            setSucess(2);
+        });
     }
+
     return (
         <div className='container background'>
             <form onSubmit={handleSubmit} className='form'>
@@ -16,6 +44,15 @@ export default function EmailSignUp() {
                 <TextInput type='password' name='password' placeholder='Password' />
                 <TextInput type='password' name='confirmPassword' placeholder='Confirm Password' />
                 <button className='btn primary light-text x-padding' type='submit'>Sign up</button>
+                {
+                    success === 2 ? 
+                    <p className='secondary-negative-text'>{errorMessage}</p> : null
+                }
+                <p> Already have an account?
+                    <Link to={'/login'}>
+                        <span className="secondary-negative-text link">Sign in</span>
+                    </Link>
+                </p>
             </form>
         </div>
     )

@@ -96,6 +96,7 @@
 
 .primary-text {
   color: #386641;
+  fill: #386641;
 }
 
 .secondary {
@@ -104,6 +105,7 @@
 
 .secondary-text {
   color: #6A994E;
+  fill: #6A994E;
 }
 
 .tertiary {
@@ -112,6 +114,7 @@
 
 .tertiary-text {
   color: #A7C957;
+  fill: #A7C957;
 }
 
 .background {
@@ -120,10 +123,12 @@
 
 .light-text {
   color: #F2E8CF;
+  fill: #F2E8CF;
 }
 
 .dark-text {
   color: #582F0E;
+  fill: #582F0E;
 }
 
 .secondary-negative {
@@ -132,6 +137,7 @@
 
 .secondary-negative-text {
   color: #BC4749;
+  fill: #BC4749;
 }
 
 .extra-lite {
@@ -140,6 +146,7 @@
 
 .extra-lite-text {
   color: white;
+  fill: white;
 }
 
 .rounter-link {
@@ -175,4 +182,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.row {
+flex-direction: row;
+} 
+
+.gap {
+  gap: .5rem;
 }
