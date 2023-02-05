@@ -5,11 +5,9 @@ ul {
     overflow: hidden;
   
 }
-.btn {
-    border-radius: .75rem;
-    font-weight: 750;
-    padding: 14px 20px;    
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
+
+.btn-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
 }
