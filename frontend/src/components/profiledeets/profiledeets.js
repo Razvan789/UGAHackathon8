@@ -13,7 +13,7 @@ export default function ProfileDetails() {
         <div className='container background'>
             <form onSubmit={handleSubmit} className='form'>
                 <h1 className='secondary-negative-text'>Profile details</h1>
-                <input type="file" id="myFile" name="filename" />
+                <input type='file' id='file' className='inputfile' />
                 <TextInput type='text' name='name' placeholder='Name (as preferred)' />
                 <TextInput type='email' name='email' placeholder='Pronouns' />
                 <TextInput type='email' name='email' placeholder='Birthdate (mm/dd/yyyy)' />
