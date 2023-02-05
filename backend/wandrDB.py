@@ -31,6 +31,11 @@ def checkEmpty(data):
     else:
         return data
 
+def checkArgs(json, args):
+    for arg in args:
+        if arg not in json:
+            return False
+    return True
 
 # Create a function to query the database
 def query_db(query, args=()):
@@ -59,6 +64,10 @@ def users():
     elif request.method == 'POST':
         args = request.json
         if args:
-            insert_db(f'INSERT INTO users (userID, firstName, lastName, email, password) VALUES ({args.get("userID")}, "{args.get("firstName")}", "{args.get("lastName")}", "{args.get("email")}", "{args.get("password")}")')
-            return query_db(f'SELECT * FROM users WHERE userID = {args.get("userID")}')
+            if checkArgs(args, ["name", "email", "password"]):
+                insert_db(f'INSERT INTO users (name, email, password) VALUES ("{args.get("name")}", "{args.get("email")}", "{args.get("password")}")')
+                return ("200", 200)
+            return ("400", 400)
+
         return ("400", 400)
+
