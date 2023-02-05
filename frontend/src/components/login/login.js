@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import './login.css'
 import { Link, useNavigate } from 'react-router-dom';
 import TextInput from '../textInput/textInput';
+import { loginUser, checkFields } from '../../utils/apiAdapter';
 
 export default function Login() {
     const [message, setMessage] = useState(window.sessionStorage.getItem('message') || '');
@@ -11,9 +12,22 @@ export default function Login() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(e.target.name.value);
-        alert("Submitted!");
-    }
+        if (!checkFields(e, ['email', 'password'])) {
+            setMessage('Please fill all fields');
+            return;
+        }
+        loginUser({
+            email: e.target.email.value,
+            password: e.target.password.value,
+        }).then((res) => {
+            console.log(res);
+            window.sessionStorage.setItem('user', JSON.stringify(res));
+            navigate('/');
+        }).catch((err) => {
+            setMessage("User not found, please try again");
+        });
+
+    }  
 
     useEffect(() => {
         //If user is already logged in, redirect to home

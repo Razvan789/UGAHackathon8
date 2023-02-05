@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import TextInput from '../textInput/textInput';
-import { insertUser } from '../../utils/apiAdapter';
+import { insertUser, checkFields } from '../../utils/apiAdapter';
 import { Link, useNavigate } from 'react-router-dom';
 
 
@@ -35,15 +35,6 @@ export default function EmailSignUp() {
         });
     }
 
-    function checkFields(e, fields) {
-        fields.forEach(element => {
-            if (e.target[element].value === '') {
-                console.log("Missing field: " + element);
-                return false;
-            }
-        });
-        return true;
-    }
     return (
         <div className='container background'>
             <form onSubmit={handleSubmit} className='form'>

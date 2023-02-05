@@ -57,7 +57,7 @@ def users():
     
     if request.method == 'GET':
         args = request.args
-        if args:
+        if args.get("userID"):
             return query_db(f'SELECT * FROM users WHERE userID = {args.get("userID")}')
         return query_db('SELECT * FROM users')
 
@@ -71,3 +71,32 @@ def users():
 
         return ("400", 400)
 
+@app.route('/users/<userID>', methods=['GET', 'PUT', 'DELETE'])
+def user(userID):
+    if request.method == 'GET':
+        return query_db(f'SELECT * FROM users WHERE userID = {userID}')
+
+    elif request.method == 'PUT':
+        args = request.json
+        if args:
+            if checkArgs(args, ["name", "email", "password"]):
+                insert_db(f'UPDATE users SET name = "{args.get("name")}", email = "{args.get("email")}", password = "{args.get("password")}" WHERE userID = {userID}')
+                return ("200", 200)
+            return ("400", 400)
+
+        return ("400", 400)
+
+    elif request.method == 'DELETE':
+        insert_db(f'DELETE FROM users WHERE userID = {userID}')
+        return ("200", 200)
+
+
+@app.route('/users/login', methods=['GET'])
+def login():
+    args = request.args
+    if args:
+        if checkArgs(args, ["email", "password"]):
+            return query_db(f'SELECT * FROM users WHERE email = "{args.get("email")}" AND password = "{args.get("password")}"')
+        return ("400", 400)
+
+    return ("400", 400)
