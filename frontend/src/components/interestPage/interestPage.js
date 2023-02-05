@@ -8,7 +8,7 @@ export default function interestPage() {
 
     return (
         <div className="container flex-center">
-            <h1>Intrests</h1>
+            <h1>Interests</h1>
             <div className="btn-group">
                 <ToggleButton title="Photography" isActive={true} />
                 <ToggleButton title="Cooking" isActive={false} />
@@ -19,7 +19,6 @@ export default function interestPage() {
                 <ToggleButton title="Museums" isActive={false} />
                 <ToggleButton title="Sports" isActive={false} />
                 <ToggleButton title="Hiking" isActive={false} />
-                <ToggleButton title="Shopping" isActive={false} />
                 <ToggleButton title="Live Music" isActive={false} />
                 <ToggleButton title="Backpacking" isActive={false} />
             </div>

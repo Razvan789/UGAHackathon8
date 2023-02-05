@@ -6,13 +6,12 @@ import ToggleButton from "../toggleButton/toggleButton";
 export default function Iama() {
     return (
         <div className="container flex-center">
-            <h1>I am a </h1>
+            <h1>I am </h1>
             <div className="btn-group">
-                <ToggleButton title="Woman" isActive={true} />
-                <ToggleButton title="Man" isActive={false} />
+                <ToggleButton title="Female" isActive={true} />
+                <ToggleButton title="Male" isActive={false} />
                 <ToggleButton title="Non-binary" isActive={false} />
                 <ToggleButton title="Other" isActive={false} />
-               
             </div>
             <p></p>
             <Link to={'/interestPage'} className="router-link">
