@@ -9,8 +9,7 @@ export default function ProfileDetails() {
     function handleSubmit(e) {
         e.preventDefault();
         console.log(e.target.name.value);
-        alert("Submitted!");
-        navigate('/interestPage');
+        navigate('/iama');
     }
     return (
         <div className='container background'>

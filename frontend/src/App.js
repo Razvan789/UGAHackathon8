@@ -12,6 +12,7 @@ import Profiledeets from './components/profiledeets/profiledeets';
 import Iama from './components/iama/iama';
 import Home from './components/home/home';
 import AddGroup from './components/home/addGroup';
+import ProfileDetails from './components/profiledeets/profiledeets';
 function App() {
   return (
     <BrowserRouter>
@@ -27,6 +28,7 @@ function App() {
           <Route path="/iama" element={<Iama />} />
           <Route path="/home" element={<Home/>} />
           <Route path="/addGroup" element={<AddGroup />} />
+          <Route path="/profiledeets" element={<ProfileDetails />} />
 
         </Route>
         <Route path="*" element={<h1 style={{textAlign:'center'}}>404: Not Found</h1>} />

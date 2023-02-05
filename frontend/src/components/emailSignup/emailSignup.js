@@ -27,7 +27,7 @@ export default function EmailSignUp() {
         }).then((res) => {
             setSucess(1);
             window.sessionStorage.setItem('message', "Account Created!");
-            navigate('/iama');
+            navigate('/profiledeets');
         })
         .catch((err) => {
             setErrorMessage(err.message);
