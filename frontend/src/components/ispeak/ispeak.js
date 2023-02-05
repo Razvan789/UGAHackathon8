@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import "./ispeak.css";
-
+import ToggleButton from "../toggleButton/toggleButton";
 export default function Ispeak() {
     return (
         <div className="container flex-center">
@@ -13,17 +14,11 @@ export default function Ispeak() {
                 <ToggleButton title="Arabic" isActive={false} />
                 <ToggleButton title="Chinese" isActive={false} />
             </div>
-
+            <p></p>
+            <Link to={'/interestPage'} className="router-link">
+                <button className="btn primary light-text x-padding">Continue</button>
+            </Link>
 
         </div>
     )
-}
-function ToggleButton({ title, isActive }) {
-    const [toggle, setToggle] = useState(isActive);
-    return (
-        <button className={toggle ? "btn tertiary extra-lite-text x-padding" : "btn extra-lite dark-text x-padding"} 
-        onClick={() => setToggle(!toggle)}>
-            {title}
-        </button>
-    );
 }
