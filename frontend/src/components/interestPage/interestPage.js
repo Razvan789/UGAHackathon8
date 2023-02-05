@@ -17,7 +17,7 @@ export default function interestPage() {
 
     return (
         <div className="container flex-center">
-            <h1>Intrests</h1>
+            <h1>Interests</h1>
             <div className="btn-group">
                 <ToggleButton title="Museums" isActive={true} icon={<MuseumIcon className=""/>}/>
                 <ToggleButton title="Photography" isActive={true} icon={<CameraIcon className=""/>} />
