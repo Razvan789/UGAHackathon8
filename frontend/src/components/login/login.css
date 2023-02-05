@@ -1,9 +1,5 @@
 /* Bordered form */
-.form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+
   
   /* Extra style for the cancel button (red) */
   .cancelbtn {

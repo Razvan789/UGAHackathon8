@@ -34,3 +34,37 @@ export function loginUser(user) {
     })
 
 }
+
+
+export function isLoggedIn() {
+    if(window.sessionStorage.getItem('user') != null) {
+        return true;
+    }
+    return false;
+}
+
+
+export function getGroups() {
+    return new Promise((resolve, reject) => {
+        fetch('http://localhost:5000/groups')
+            .then(response => response.json())
+            .then(data => resolve(data))
+            .catch(error => reject(error))
+    })
+}
+
+
+export function addGroup(group) {
+    return new Promise((resolve, reject) => {
+        fetch('http://localhost:5000/groups', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(group)
+        })
+            .then(response => response.json())
+            .then(data => resolve(data))
+            .catch(error => reject(error))
+    })
+}

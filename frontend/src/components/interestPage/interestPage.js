@@ -19,19 +19,19 @@ export default function interestPage() {
         <div className="container flex-center">
             <h1>Intrests</h1>
             <div className="btn-group">
+                <ToggleButton title="Museums" isActive={true} icon={<MuseumIcon className=""/>}/>
                 <ToggleButton title="Photography" isActive={true} icon={<CameraIcon className=""/>} />
                 <ToggleButton title="Cooking" isActive={false} icon={<NoodlesIcon className=""/>} />
                 <ToggleButton title="Art" isActive={false} icon={<PlatteIcon className=""/>}/>
                 <ToggleButton title="Parachuting" isActive={false} icon={<ParachuteIcon className=""/>}/>
                 <ToggleButton title="Night Life" isActive={false} icon={<GobletIcon className=""/>}/>
                 <ToggleButton title="Shopping" isActive={false} icon={<ShoppingIcon className=""/>}/>
-                <ToggleButton title="Museums" isActive={false} icon={<MuseumIcon className=""/>}/>
                 <ToggleButton title="Hiking" isActive={false} icon={<OutdoorIcon className=""/>}/>
                 <ToggleButton title="Shopping" isActive={false} icon={<ShoppingIcon className=""/>}/>
                 <ToggleButton title="Live Music" isActive={false} icon={<MusicIcon className=""/>}/>
             </div>
             <p></p>
-            <Link to={'/signup'} className="router-link">
+            <Link to={'/login'} className="router-link">
                 <button className="btn primary light-text x-padding">Continue</button>
             </Link>
 

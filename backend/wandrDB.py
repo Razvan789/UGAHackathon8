@@ -34,6 +34,7 @@ def checkEmpty(data):
 def checkArgs(json, args):
     for arg in args:
         if arg not in json:
+            print(f'Error: {arg} not in json')
             return False
     return True
 
@@ -100,3 +101,23 @@ def login():
         return ("400", 400)
 
     return ("400", 400)
+
+
+
+@app.route('/groups', methods=['GET', 'POST', 'PUT', 'DELETE'])
+def groups():
+    if request.method == 'GET':
+        args = request.args
+        if args.get("groupID"):
+            return query_db(f'SELECT * FROM groups WHERE groupID = {args.get("groupID")}')
+        return query_db('SELECT * FROM groups')
+
+    elif request.method == 'POST':
+        args = request.json
+        if args:
+            if checkArgs(args, ["name", "description", "image"]):
+                insert_db(f'INSERT INTO groups (name, description, image) VALUES ("{args.get("name")}", "{args.get("description")}", "{args.get("image")}")')
+                return ("200", 200)
+            return ("400", 400)
+
+        return ("400", 400)

@@ -10,7 +10,8 @@ import Ispeak from './components/ispeak/ispeak';
 import InterestPage from './components/interestPage/interestPage';
 import Profiledeets from './components/profiledeets/profiledeets';
 import Iama from './components/iama/iama';
-
+import Home from './components/home/home';
+import AddGroup from './components/home/addGroup';
 function App() {
   return (
     <BrowserRouter>
@@ -24,7 +25,11 @@ function App() {
           <Route path="/interestPage" element={<InterestPage />} />
           <Route path="/profiledeets" element={<Profiledeets />} />
           <Route path="/iama" element={<Iama />} />
+          <Route path="/home" element={<Home/>} />
+          <Route path="/addGroup" element={<AddGroup />} />
+
         </Route>
+        <Route path="*" element={<h1 style={{textAlign:'center'}}>404: Not Found</h1>} />
       </Routes>
     </BrowserRouter>
   );

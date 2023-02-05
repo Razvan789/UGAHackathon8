@@ -6,7 +6,7 @@ import { loginUser, checkFields } from '../../utils/apiAdapter';
 
 export default function Login() {
     const [message, setMessage] = useState(window.sessionStorage.getItem('message') || '');
-    window.sessionStorage.removeItem('message');
+    // window.sessionStorage.removeItem('message');
     const navigate = useNavigate();
 
 
@@ -22,7 +22,7 @@ export default function Login() {
         }).then((res) => {
             console.log(res);
             window.sessionStorage.setItem('user', JSON.stringify(res));
-            navigate('/');
+            navigate('/home');
         }).catch((err) => {
             setMessage("User not found, please try again");
         });
@@ -32,7 +32,7 @@ export default function Login() {
     useEffect(() => {
         //If user is already logged in, redirect to home
         if(window.sessionStorage.getItem('user')) {
-            navigate('/');
+            navigate('/home');
         }
     }, []);
 

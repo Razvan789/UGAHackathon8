@@ -62,7 +62,7 @@
 }
 
 .container {
-  height: 100%;
+  height: calc(100%);
   padding: 36px;
   overflow-x: hidden;
 }
@@ -149,7 +149,7 @@
   fill: white;
 }
 
-.rounter-link {
+.router-link {
   text-decoration: none;
   color: inherit;
 }
@@ -189,4 +189,27 @@ flex-direction: row;
 
 .gap {
   gap: .5rem;
+}
+
+.flex-start {
+  justify-content: start;
+}
+
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

@@ -1,6 +1,6 @@
 .input-container {
     position: relative;
-    width: fit-content;
+    width: 250px;
     display: flex;
     align-items: center;
     margin: 15px;

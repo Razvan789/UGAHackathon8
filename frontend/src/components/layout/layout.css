@@ -1,3 +1,7 @@
 .screen-h {
     height: 100vh;
 }
+
+.bottom-spacer {
+    height: 90px;
+}

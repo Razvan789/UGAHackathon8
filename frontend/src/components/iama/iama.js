@@ -15,7 +15,7 @@ export default function Iama() {
                
             </div>
             <p></p>
-            <Link to={'/interestPage'} className="router-link">
+            <Link to={'/ispeak'} className="router-link">
                 <button className="btn primary light-text x-padding">Continue</button>
             </Link>
 
