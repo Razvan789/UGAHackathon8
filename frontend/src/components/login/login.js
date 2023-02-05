@@ -1,9 +1,11 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './login.css'
 import { Link } from 'react-router-dom';
 import TextInput from '../textInput/textInput';
 
-export default function login() {
+export default function Login() {
+    const [message, setMessage] = useState(window.sessionStorage.getItem('message') || '');
+    window.sessionStorage.removeItem('message');
     function handleSubmit(e) {
         e.preventDefault();
         console.log(e.target.name.value);
@@ -15,6 +17,7 @@ export default function login() {
                 <h1 className='secondary-negative-text'>Login</h1>
                 <TextInput type='email' name='email' placeholder='Email' />
                 <TextInput type='password' name='password' placeholder='Password' />
+                <p className='secondary-negative-text'>{message}</p>
                 <button className='btn primary light-text x-padding' type='submit'>Log in</button>
                 <p> Don't have an account? </p>
                 <Link to = {'/signup'} className = "router-link">

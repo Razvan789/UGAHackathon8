@@ -14,7 +14,6 @@ export default function interestPage() {
                 <p className="dark-text">Users going through a vetting process to ensure you never match with bots</p>
             </div>
             <Link to={'/signup'} className="rounter-link"><button className="btn primary light-text x-padding"> Create an account</button></Link>
-           
             <Link to={'/signup'} className="router-link">
                 <button className="btn primary light-text x-padding">Create an account</button>
             </Link>
