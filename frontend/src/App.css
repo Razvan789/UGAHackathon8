@@ -12,6 +12,7 @@
   --light-text: #F2E8CF;
   --dark-text: #582F0E;
   --secondary-negative: #BC4749;
+  --extra-lite: white;
 }
 
 * {
@@ -133,7 +134,13 @@
   color: #BC4749;
 }
 
-  
+.extra-lite {
+  background-color: white;
+}
+
+.extra-lite-text {
+  color: white;
+}
 
 .rounter-link {
   text-decoration: none;
@@ -160,4 +167,12 @@
 .link:hover::after {
   width: 100%;
   transition: width .3s;
+}
+
+
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
